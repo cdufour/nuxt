@@ -1,11 +1,11 @@
 <template>
     <div>
-        <h1>Joueurs ({{ players.length }})</h1>
-        <nuxt-link to="/about">Test</nuxt-link>
-        <!-- <PlayerCard 
+        <h1 class="demo">Joueurs ({{ players.length }})</h1>
+        <nuxt-link to="/about">A propos</nuxt-link>
+        <PlayerCard 
             v-for="(player, index) in players"
             :key="index"
-            :player="player" /> -->
+            :player="player" />
     </div>
 </template>
 
@@ -13,9 +13,18 @@
 import PlayerCard from '@/components/PLayerCard.vue'
 import { mapState } from 'vuex'
 
+const description = "Page listant tous les joueurs du championnat XXX"
+
 export default {
+    name: 'PlayersPage',
     components: {
         PlayerCard
+    },
+    head: {
+        title: 'Player list',
+        meta: [
+            { hid: 'description', name: 'description', content: description  }
+        ]
     },
     // data() {
     //     return {
@@ -52,6 +61,7 @@ export default {
         // attente de la fin du traitement async éxécuté par l'action
         
         try {
+            // attente du retour de la promesse
             await context.store.dispatch('players/fetchPlayers')
         } catch(e) {
             console.log(e)
@@ -65,5 +75,7 @@ export default {
 </script>
 
 <style scoped>
-
+/* div {
+    color: green
+} */
 </style>

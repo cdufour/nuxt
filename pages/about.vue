@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1>A propos</h1>
+        <h1 class="toto">{{ 'A propos' | trim(3, 3) }} </h1>
+        <img src="~assets/loup.jpg" alt="loup"/>
         <p>
             <nuxt-link to="/players">Joueurs</nuxt-link>
         </p>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+
     export default {
         data() {
             return {
@@ -26,7 +28,8 @@
             isEnough() {
                 return this.counter > 10
             }
-        }
+        },
+        layout: 'demo'
     }
 </script>
 
