@@ -1,8 +1,6 @@
 <template>
     <div class="player-card">
-        <h2>{{ player.lastname }} {{ player.firstname }}</h2>
-        <p>Poste: {{ player.position }}</p>
-        <p>Equipe: {{ player.team }}</p>
+        <h2>{{ player.lastname }}</h2>
     </div>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
     <div>
         <h1>A propos</h1>
+        <p>
+            <nuxt-link to="/players">Joueurs</nuxt-link>
+        </p>
         <p>{{ counter }}</p>
         <button @click="incr">Increment</button>
         <p v-if="isEnough">BASTA !</p>

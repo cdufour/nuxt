@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h1>Nuxtjs</h1>
-    <p>test</p>
   </div>
 </template>
 
